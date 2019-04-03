@@ -1,2 +1,3 @@
 # CompenNet
-End-to-end Projector Photometric Compensation
+End-to-end Projector Photometric Compensation. Source code, dataset and results are comming soon...
+
