@@ -1,0 +1,1 @@
+## This folder should contain your dataset. You can download and extract our [dataset](http://bit.ly/2G5iTfY) here.
