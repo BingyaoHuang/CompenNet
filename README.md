@@ -52,9 +52,9 @@ For more info please refer to our [CVPR'19 paper][1] and [supplementary material
 6. Run [`main.py`](src/python/main.py) to start training and testing
 
         python main.py
-7. The training and validation results are updated in the browser during training. An example is shown below, where the 1st figure shows the training and validation loss, rmse and ssim curves. The 2nd and 3rd montage figures are the training and validation pictures, respectively. In each montage figure, the **1st row are the camera captured uncompensated images, the 2nd row are CompenNet predicted projector input images and the 3rd row are ground truth projector input image**. 
+7. The training and validation results are updated in the browser during training. An example is shown below, where the 1st figure shows the training and validation loss, rmse and ssim curves. The 2nd and 3rd montage figures are the training and validation pictures, respectively. In each montage figure, the **1st rows are the camera captured uncompensated images, the 2nd rows are CompenNet predicted projector input images and the 3rd rows are ground truth of projector input image**. 
    
-<!-- ![result1](doc/training_progress.png) -->
+![result1](doc/training_progress.png)
 
 
 
@@ -66,7 +66,7 @@ For more info please refer to our [CVPR'19 paper][1] and [supplementary material
 3. Project and capture a surface image `CompenNet/data/ref/img_gray`.
 4. Project and capture a [checkerboard image](doc/checkerboard.png).
 5. Estimate the homography `H` between camera and projector image, then warp the camera captured images `train`, `test` and `img_gray` to projector's view using `H`. 
-6. Finally save the warped images to `CompenNet/data/light[n]/pos[m]/warp/train`,  `CompenNet/data/light[n]/pos[m]/warp/test` and  `CompenNet/data/light[n]/pos[m]/warp/ref`, respectively, where `[n]` and `[m]` are lighting setup index and position setup index.
+6. Finally save the warped images to `CompenNet/data/light[n]/pos[m]/warp/[surface]/train`,  `CompenNet/data/light[n]/pos[m]/[surface]/warp/test` and  `CompenNet/data/light[n]/pos[m]/[surface]/warp/ref`, respectively, where `[n]` and `[m]` are lighting setup index and position setup index, `[surface]` is projection surface's name.
 
 ----
 ## Implement your own CompenNet model
