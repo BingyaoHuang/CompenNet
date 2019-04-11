@@ -117,7 +117,7 @@ def trainModel(net, train_data, valid_data, train_option):
 
     # Done training and save the last epoch model
     checkpoint_dir = '../../checkpoint'
-    os.makedirs(checkpoint_dir)
+    if not os.path.exists(checkpoint_dir): os.makedirs(checkpoint_dir)
     checkpoint_file_name = fullfile(checkpoint_dir, title + '.pth')
     torch.save(net.state_dict(), checkpoint_file_name)
     print('Checkpoint saved to {}\n'.format(checkpoint_file_name))

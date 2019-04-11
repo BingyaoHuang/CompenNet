@@ -88,7 +88,7 @@ train_option = {'data_name': '',  # will be set later
                 'lr': 1e-3,  # learning rate
                 'lr_drop_ratio': 0.2,
                 'lr_drop_rate': 800,
-                'loss': '',  # loss function will be set later
+                'loss': '',  # loss will be set to one of the loss functions in loss_list later
                 'l2_reg': 1e-4,  # l2 regularization
                 'device': device,
                 'plot_on': True,  # plot training progress using visdom
@@ -100,9 +100,10 @@ save_compensation = True
 
 # log file
 from time import localtime, strftime
-
+log_dir = '../../log'
+if not os.path.exists(log_dir): os.makedirs(log_dir)
 log_file_name = strftime('%Y-%m-%d_%H_%M_%S', localtime()) + '.txt'
-log_file = open(log_file_name, 'w')
+log_file = open(fullfile(log_dir, log_file_name), 'w')
 title_str = '{:30s}{:<20}{:<20}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}\n'
 log_file.write(title_str.format('data_name', 'model_name', 'loss_function',
                                 'num_train', 'batch_size', 'max_iters',
@@ -151,7 +152,7 @@ for data_name in data_list:
             train_option['model_name'] = model_name
 
             for loss in loss_list:
-                log_file = open(log_file_name, 'a')
+                log_file = open(fullfile(log_dir, log_file_name), 'a')
 
                 # set seed of rng for repeatability
                 resetRNGseed(0)
@@ -166,7 +167,7 @@ for data_name in data_list:
 
                     # this path should points to a pre-trained model,
                     compen_net.load_state_dict(
-                        torch.load('../../checkpoint/public_light2_pos1_curves_CompenNet_l1+ssim_500_64_1000_0.001_0.2_800_0.0001.pth'))
+                        torch.load('../../checkpoint/light1_pos1_stripes_CompenNet_l1+ssim_500_64_10_0.001_0.2_800_0.0001.pth'))
                     compen_net.device_ids = device_ids
                     compen_net.module.name = model_name
                 else:
@@ -207,10 +208,8 @@ for data_name in data_list:
                     cmp_folder_name = '{}_{}_{}_{}_{}'.format(model_name, loss, num_train, train_option['batch_size'], train_option['max_iters'])
                     cam_cmp_path = fullfile(data_root, 'cam/cmp', cmp_folder_name)
                     prj_cmp_path = fullfile(data_root, 'prj/cmp', cmp_folder_name)
-                    if not os.path.exists(cam_cmp_path):
-                        os.makedirs(cam_cmp_path)
-                    if not os.path.exists(prj_cmp_path):
-                        os.makedirs(prj_cmp_path)
+                    if not os.path.exists(cam_cmp_path): os.makedirs(cam_cmp_path)
+                    if not os.path.exists(prj_cmp_path): os.makedirs(prj_cmp_path)
 
                     # save images
                     saveImgs(cam_cmp, cam_cmp_path)  # compensated validation images
