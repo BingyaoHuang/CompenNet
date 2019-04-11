@@ -1,5 +1,5 @@
-<img src='doc/net.png' align="right" width=280>
-<br><br><br>
+<img src='doc/net.png' align="right" width=300>
+<br><br>
 
 End-to-end Projector Photometric Compensation (to appear in CVPR'19)
 <br><br>
@@ -73,9 +73,9 @@ For more info please refer to our [CVPR'19 paper][1] and [supplementary material
 1. Create a new class e.g, `CompenNetImproved` in [`CompenNetModel.py`](src/python/CompenNetModel.py).
 2. Put the new class name string in `model_list`, e.g., `model_list = [CompenNet, CompenNetImproved]` in [`main.py`](src/python/main.py).
 3. Run `main.py`.
-4. The validation results will be saved to `%Y-%m-%d_%H_%M_%S.txt` as shown below.
+4. The validation results will be saved to `%Y-%m-%d_%H_%M_%S.txt` and an example is shown below.
 
-## Example quantitative comparison results
+### 
 
     data_name              model_name   loss_function   num_train  batch_size  max_iters  uncmp_psnr  uncmp_rmse  uncmp_ssim  valid_psnr  valid_rmse  valid_ssim
     light2/pos1/curves     CompenNet    l1+ssim         500        64          1000       14.3722     0.3311      0.5693      23.1205     0.1209      0.7943    
