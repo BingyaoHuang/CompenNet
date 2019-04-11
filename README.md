@@ -49,10 +49,16 @@ For more info please refer to our [CVPR'19 paper][1] and [supplementary material
         visdom
 
 5. Once visdom is successfully started, visit [`http://localhost:8097`](http://localhost:8097)
-6. Run [`main.py`](src/python/main.py) to start training and testing
+6. Open [`main.py`](src/python/main.py) and set which GPUs to use. An example is shown below, we use GPU 0, 2 and 3 to train the model.
+   
+        os.environ['CUDA_VISIBLE_DEVICES'] = '0, 2, 3'
+        device_ids = [0, 1, 2]
+
+
+7. Run [`main.py`](src/python/main.py) to start training and testing
 
         python main.py
-7. The training and validation results are updated in the browser during training. An example is shown below, where the 1st figure shows the training and validation loss, rmse and ssim curves. The 2nd and 3rd montage figures are the training and validation pictures, respectively. In each montage figure, the **1st rows are the camera captured uncompensated images, the 2nd rows are CompenNet predicted projector input images and the 3rd rows are ground truth of projector input image**. 
+8. The training and validation results are updated in the browser during training. An example is shown below, where the 1st figure shows the training and validation loss, rmse and ssim curves. The 2nd and 3rd montage figures are the training and validation pictures, respectively. In each montage figure, the **1st rows are the camera captured uncompensated images, the 2nd rows are CompenNet predicted projector input images and the 3rd rows are ground truth of projector input image**. 
    
 ![result1](doc/training_progress.png)
 
@@ -67,13 +73,15 @@ For more info please refer to our [CVPR'19 paper][1] and [supplementary material
 4. Project and capture a [checkerboard image](doc/checkerboard.png).
 5. Estimate the homography `H` between camera and projector image, then warp the camera captured images `train`, `test` and `img_gray` to projector's view using `H`. 
 6. Finally save the warped images to `CompenNet/data/light[n]/pos[m]/warp/[surface]/train`,  `CompenNet/data/light[n]/pos[m]/[surface]/warp/test` and  `CompenNet/data/light[n]/pos[m]/[surface]/warp/ref`, respectively, where `[n]` and `[m]` are lighting setup index and position setup index, `[surface]` is projection surface's name.
+   
+Note `ref/img_0001.png` to `ref/img_0125.png` are plain color training images used by TPS-based method, you don't need to use these images to train CompenNet.
 
 ----
 ## Implement your own CompenNet model
 1. Create a new class e.g., `CompenNetImproved` in [`CompenNetModel.py`](src/python/CompenNetModel.py).
 2. Put the new class name string in `model_list`, e.g., `model_list = ['CompenNet', 'CompenNetImproved']` in [`main.py`](src/python/main.py).
 3. Run `main.py`.
-4. The validation results will be saved to `%Y-%m-%d_%H_%M_%S.txt` and an example is shown below.
+4. The validation results will be saved to `log/%Y-%m-%d_%H_%M_%S.txt` and an example is shown below, where prefix `uncmp_` means the similarity between uncompensated camera-captured images and ground truth of projector input images. Prefix `valid_` means the similarity between CompenNet predicted projector input images and ground truth of projector input images. Refer to our [CVPR'19 paper][1] Fig. 3 for more details.
 
 ### 
 
@@ -94,7 +102,7 @@ For more info please refer to our [CVPR'19 paper][1] and [supplementary material
     light2/pos5/stripes    CompenNet    l1+ssim         500        64          1000       12.3792     0.4165      0.5314      21.0629     0.1533      0.7416    
     light1/pos5/cubes      CompenNet    l1+ssim         500        64          1000       11.7220     0.4492      0.3847      21.4928     0.1459      0.7141    
         
-## More Qualitative Comparison Results
+## More qualitative comparison results
 ![result1](doc/img_1.png)
 ![result1](doc/img_2.png)
 
