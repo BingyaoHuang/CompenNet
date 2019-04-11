@@ -70,8 +70,8 @@ For more info please refer to our [CVPR'19 paper][1] and [supplementary material
 
 ----
 ## Implement your own CompenNet model
-1. Create a new class e.g, `CompenNetImproved` in [`CompenNetModel.py`](src/python/CompenNetModel.py).
-2. Put the new class name string in `model_list`, e.g., `model_list = [CompenNet, CompenNetImproved]` in [`main.py`](src/python/main.py).
+1. Create a new class e.g., `CompenNetImproved` in [`CompenNetModel.py`](src/python/CompenNetModel.py).
+2. Put the new class name string in `model_list`, e.g., `model_list = ['CompenNet', 'CompenNetImproved']` in [`main.py`](src/python/main.py).
 3. Run `main.py`.
 4. The validation results will be saved to `%Y-%m-%d_%H_%M_%S.txt` and an example is shown below.
 
