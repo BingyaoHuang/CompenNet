@@ -165,7 +165,8 @@ for data_name in data_list:
                     compen_net.to(device)
 
                     # this path should points to a pre-trained model,
-                    compen_net.load_state_dict(torch.load('checkpoint/public_light2_pos1_curves_CompenNet_l1+ssim_500_64_1000_0.001_0.2_800_0.0001.pth'))
+                    compen_net.load_state_dict(
+                        torch.load('../../checkpoint/public_light2_pos1_curves_CompenNet_l1+ssim_500_64_1000_0.001_0.2_800_0.0001.pth'))
                     compen_net.device_ids = device_ids
                     compen_net.module.name = model_name
                 else:
