@@ -57,6 +57,7 @@ For more info please refer to our [CVPR'19 paper][1] and [supplementary material
 
 7. Run [`main.py`](src/python/main.py) to start training and testing
 
+        cd src/python
         python main.py
 8. The training and validation results are updated in the browser during training. An example is shown below, where the 1st figure shows the training and validation loss, rmse and ssim curves. The 2nd and 3rd montage figures are the training and validation pictures, respectively. In each montage figure, the **1st rows are the camera captured uncompensated images, the 2nd rows are CompenNet predicted projector input images and the 3rd rows are ground truth of projector input image**. 
    
