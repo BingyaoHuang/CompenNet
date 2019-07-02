@@ -1,7 +1,7 @@
 <img src='doc/net.png' align="right" width=300>
 <br><br>
 
-End-to-end Projector Photometric Compensation (to appear in CVPR'19)
+End-to-end Projector Photometric Compensation (CVPR'19 Oral)
 <br><br>
 ===
 
@@ -103,23 +103,25 @@ Note `ref/img_0001.png` to `ref/img_0125.png` are plain color training images us
 
     
 ## Citation
-Please cite these papers in your publications if it helps your research:
-
     @inproceedings{huang2019compennet,
-        author = "Huang, Bingyao and Ling, Haibin",
-        title = "End-to-end Projector Photometric Compensation",
-        year = "2019",
-        booktitle = "IEEE Computer Society Conference on Computer Vision and Pattern Recognition (To appear)"
+        author = {Huang, Bingyao and Ling, Haibin},
+        title = {End-To-End Projector Photometric Compensation},
+        booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+        month = {June},
+        year = {2019}
     }
 
 ## Acknowledgments
 The PyTorch implementation of SSIM loss is modified from [Po-Hsun-Su/pytorch-ssim](https://github.com/Po-Hsun-Su/pytorch-ssim).
+We thank the anonymous reviewers for valuable and inspiring comments and suggestions.
+We thank the authors of the colorful textured sampling images. 
+
 
 ## License
 This software is freely available for non-profit non-commercial use, and may be redistributed under the conditions in [license](LICENSE).
 
 
-[1]: https://arxiv.org/pdf/1904.04335
+[1]: http://openaccess.thecvf.com/content_CVPR_2019/papers/Huang_End-To-End_Projector_Photometric_Compensation_CVPR_2019_paper.pdf
 [2]: http://www.dabi.temple.edu/~hbling/publication/CompenNet_sup.pdf
 [3]: http://bit.ly/2G5iTfY
 [4]: https://www.mathworks.com/help/vision/ref/detectcheckerboardpoints.html
