@@ -169,7 +169,11 @@ for data_name in data_list:
                     compen_net.load_state_dict(
                         torch.load('../../checkpoint/light1_pos1_stripes_CompenNet_l1+ssim_500_64_10_0.001_0.2_800_0.0001.pth'))
                     compen_net.device_ids = device_ids
-                    compen_net.module.name = model_name
+
+                    if torch.cuda.device_count() > 1:
+                        compen_net.module.name = model_name
+                    else:
+                        compen_net.name = model_name
                 else:
                     # start from scratch
                     compen_net = getattr(CompenNetModel, model_name)()
