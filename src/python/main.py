@@ -132,8 +132,8 @@ for data_name in data_list:
     prj_valid = readImgsMT(prj_valid_path)
 
     # convert valid data to CUDA tensor
-    cam_valid.to(device)
-    prj_valid.to(device)
+    cam_valid = cam_valid.to(device)
+    prj_valid = prj_valid.to(device)
 
     # surface image for training and validation
     cam_surf_train = cam_surf.expand_as(cam_train)
@@ -198,7 +198,7 @@ for data_name in data_list:
                 if save_compensation:
                     print('Saving compensation images\n')
                     torch.cuda.empty_cache()
-                    cam_surf_valid.to(device)
+                    cam_surf_valid = cam_surf_valid.to(device)
 
                     with torch.no_grad():
                         cam_cmp = compen_net(cam_valid, cam_surf_valid).detach()  # compensated cam captured image \hat{x}^{*}
