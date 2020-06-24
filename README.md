@@ -24,7 +24,7 @@ For more info please refer to our [CVPR'19 paper][1] and [supplementary material
 ## Prerequisites
 * PyTorch compatible GPU
 * Python 3
-* PyTorch >= 0.4.0
+* PyTorch >= 0.4.0 (note that the results in the paper were produced using this version)
 * opencv-python 3.4.4
 * visdom (for visualization)
 
@@ -69,7 +69,7 @@ For more info please refer to our [CVPR'19 paper][1] and [supplementary material
 ## Apply CompenNet to your own setup
 
 1. For a planar textured projection surface, adjust the camera-projector such that the brightest projected input image (plain white) slightly overexposes the camera captured image. Similarly, the darkest projected input image (plain black) slightly underexposes the camera captured image. This allows the projector dynamic range to cover the full camera dynamic range.
-2. Project and capture the images in `CompenNet/data/train` and `CompenNet/data/test`.
+2. Project and capture the images in `CompenNet/data/train` and `CompenNet/data/test`. Note that in our setup, we stretched the image to cover the entire projection area (keep aspect ratio).
 3. Project and capture a surface image `CompenNet/data/ref/img_gray`.
 4. Project and capture a [checkerboard image](doc/checkerboard.png).
 5. Estimate the homography `H` between camera and projector image, then warp the camera captured images `train`, `test` and `img_gray` to projector's view using `H`. 
