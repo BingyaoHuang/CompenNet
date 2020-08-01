@@ -9,7 +9,7 @@ End-to-end Projector Photometric Compensation (CVPR'19 Oral)
 ![result1](doc/img_3.png)
 
 ## Introduction
-PyTorch implementation of [CompenNet][1].
+PyTorch implementation of [CompenNet][1]. Also see [CompenNet++][9] and [journal version][8].
 
 Highlights:
 * For the first time, we formulate the compensation problem as an end-to-end learning problem and propose a convolutional neural network, named **CompenNet**, to implicitly learn the complex compensation function.
@@ -123,9 +123,12 @@ This software is freely available for non-profit non-commercial use, and may be 
 
 [1]: http://openaccess.thecvf.com/content_CVPR_2019/papers/Huang_End-To-End_Projector_Photometric_Compensation_CVPR_2019_paper.pdf
 [2]: http://www.dabi.temple.edu/~hbling/publication/CompenNet_sup.pdf
-[3]: http://bit.ly/2G5iTfY
+[3]: https://bingyaohuang.github.com/pub/CompenNeSt++/photometric_cmp_data
 [4]: https://www.mathworks.com/help/vision/ref/detectcheckerboardpoints.html
 [5]: https://github.com/BingyaoHuang/single-shot-pro-cam-calib/tree/ismar18
 [6]: https://youtu.be/fnrVDOhcu7I
 [7]: http://www.vision.caltech.edu/bouguetj/calib_doc/htmls/calib_example/index.html
+[8]: https://github.com/BingyaoHuang/CompenNeSt-plusplus
+[9]: https://github.com/BingyaoHuang/CompenNet-plusplus
+
 

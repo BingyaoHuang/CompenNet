@@ -10,3 +10,5 @@ __pycache__
 compenNet_sup
 compenNetpp_sup
 *.mexw64
+src/bash
+src/matlab
