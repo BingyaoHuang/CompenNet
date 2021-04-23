@@ -122,8 +122,8 @@ This software is freely available for non-profit non-commercial use, and may be 
 
 
 [1]: http://openaccess.thecvf.com/content_CVPR_2019/papers/Huang_End-To-End_Projector_Photometric_Compensation_CVPR_2019_paper.pdf
-[2]: http://www.dabi.temple.edu/~hbling/publication/CompenNet_sup.pdf
-[3]: https://bingyaohuang.github.com/pub/CompenNeSt++/photometric_cmp_data
+[2]: http://vision.cs.stonybrook.edu/~bingyao/pub/CompenNet_sup
+[3]: https://bingyaohuang.github.io/pub/CompenNeSt++/photometric_cmp_data
 [4]: https://www.mathworks.com/help/vision/ref/detectcheckerboardpoints.html
 [5]: https://github.com/BingyaoHuang/single-shot-pro-cam-calib/tree/ismar18
 [6]: https://youtu.be/fnrVDOhcu7I
