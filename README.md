@@ -121,8 +121,8 @@ We thank the authors of the colorful textured sampling images.
 This software is freely available for non-profit non-commercial use, and may be redistributed under the conditions in [license](LICENSE).
 
 
-[1]: http://openaccess.thecvf.com/content_CVPR_2019/papers/Huang_End-To-End_Projector_Photometric_Compensation_CVPR_2019_paper.pdf
-[2]: http://vision.cs.stonybrook.edu/~bingyao/pub/CompenNet_sup
+[1]: https://bingyaohuang.github.io/pub/CompenNet/
+[2]: https://bingyaohuang.github.io/pub/CompenNet/supp
 [3]: https://bingyaohuang.github.io/pub/CompenNeSt++/photometric_cmp_data
 [4]: https://www.mathworks.com/help/vision/ref/detectcheckerboardpoints.html
 [5]: https://github.com/BingyaoHuang/single-shot-pro-cam-calib/tree/ismar18
