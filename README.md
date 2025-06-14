@@ -24,42 +24,48 @@ For more info please refer to our [CVPR'19 paper][1] and [supplementary material
 ## Prerequisites
 * PyTorch compatible GPU
 * Python 3
-* PyTorch >= 0.4.0 (note that the results in the paper were produced using this version)
-* opencv-python 3.4.4
+* PyTorch == 0.4.0 (note that the results in the paper were produced using this version)
+* opencv-python >= 3.4.4 (since 3.4.4 is no longer suported by pip, you may use 4.x instead)
 * visdom (for visualization)
 
 ## Usage
 ### 
 
-1. Clone this repo:
+1. Set up the Environment: Create a new conda environment:
+
+        conda create --name CompenNet python=3.7
+        # Activate the environment
+        conda activate CompenNet # Linux/macOS
+        activate CompenNet # Windows
+2. Clone this repo:
    
         git clone https://github.com/BingyaoHuang/CompenNet
         cd CompenNet
 
-2. Install required packages by typing
+3. Install required packages by typing
    
         pip install -r requirements.txt
     
 
-3. Download CompenNet [benchmark dataset][3] and extract to [`CompenNet/data`](data)
+4. Download CompenNet [benchmark dataset][3] and extract to [`CompenNet/data`](data)
 
         
-4. Start **visdom** by typing
+5. Start **visdom** by typing
 
         visdom
 
-5. Once visdom is successfully started, visit [`http://localhost:8097`](http://localhost:8097)
-6. Open [`main.py`](src/python/main.py) and set which GPUs to use. An example is shown below, we use GPU 0, 2 and 3 to train the model.
+6. Once visdom is successfully started, visit [`http://localhost:8097`](http://localhost:8097)
+7. Open [`main.py`](src/python/main.py) and set which GPUs to use. An example is shown below, we use GPU 0, 2 and 3 to train the model.
    
         os.environ['CUDA_VISIBLE_DEVICES'] = '0, 2, 3'
         device_ids = [0, 1, 2]
 
 
-7. Run [`main.py`](src/python/main.py) to start training and testing
+8. Run [`main.py`](src/python/main.py) to start training and testing
 
         cd src/python
         python main.py
-8. The training and validation results are updated in the browser during training. An example is shown below, where the 1st figure shows the training and validation loss, rmse and ssim curves. The 2nd and 3rd montage figures are the training and validation pictures, respectively. In each montage figure, the **1st rows are the camera captured uncompensated images, the 2nd rows are CompenNet predicted projector input images and the 3rd rows are ground truth of projector input image**. 
+9. The training and validation results are updated in the browser during training. An example is shown below, where the 1st figure shows the training and validation loss, rmse and ssim curves. The 2nd and 3rd montage figures are the training and validation pictures, respectively. In each montage figure, the **1st rows are the camera captured uncompensated images, the 2nd rows are CompenNet predicted projector input images and the 3rd rows are ground truth of projector input image**. 
    
 ![result1](doc/training_progress.png)
 
