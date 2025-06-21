@@ -23,7 +23,7 @@ For more info please refer to our [CVPR'19 paper][1] and [supplementary material
 
 ## Prerequisites
 * PyTorch compatible GPU
-* Python 3
+* Python 3.7
 * PyTorch == 0.4.0 (note that the results in the paper were produced using this version)
 * opencv-python >= 3.4.4 (since 3.4.4 is no longer suported by pip, you may use 4.x instead)
 * visdom (for visualization)
